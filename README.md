@@ -1,12 +1,9 @@
 jquery-watermark
 ================
 
-jQuery watermark plugin
+The following changes haven been made to the original by  Dmitriy Nosenko, Sergey Ignatiev.
 
-
-Watermark plugin that displays watermark text for inputs.
-It's doesn't use input val. 
-Watermark disappears when user starts input text.
-For now working text input from keyboard, from context menu, from keys (Ctrl+V etc)
-Works on IE7+, Chrome, Firefox, Safari 5+
-Only problem is browser's autocomplete.
+ 1) Allow textarea.
+ 2) Change  the default value of the parameter of  useAttribute from true to false. 
+ 3) Do not set the height and line-height of the <span> that holds the watermark text. 
+       This is to make the watermark text appears on the first line in a textarea. 

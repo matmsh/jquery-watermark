@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Watermark</title>
+
+<link rel="stylesheet" href="watermark.css" type="text/css" />
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript" src="../jquery.watermark.min.js"></script>
+
+
+</head>
+<body>
+<h1>Watermark Demo</h1>
+
+
+<form>
+    
+    User id : <input id="userid" type="text"   /> <br/>
+    Password : <input id="password" type="password"    /> <br/>
+     
+    Summary :  <br/> <textarea rows="10" cols="50" id="summary"></textarea>
+   
+             
+    
+</form>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	  $("#userid").watermark('init', { text:'Please enter user id ' } );
+	  $("#password").watermark('init', { text:'Please enter password'} );
+	  $("#summary").watermark('init', { text:'Please enter a summary'} );
+	});
+
+
+</script>
+
+</body>
+</html>

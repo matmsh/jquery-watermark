@@ -1,8 +1,19 @@
-﻿/*
+/*
     ==============================
     jQuery watermark plugin
     ==============================
-    
+
+    @version:1.1.1
+    @authors: Shing Hing Man
+    @Last_updated: 27 Mar 2013
+    This version is a  clone of the one created by   Dmitriy Nosenko, Sergey Ignatiev  .
+    The following changes have been made in this version.
+    1) Allow textarea.
+    2) Change  the default value of the parameter of  useAttribute from true to false. 
+    3) Do not set the height and line-height of the <span> that holds the watermark text. 
+       This is to make the watermark text appears on the first line in a textarea. 
+  
+
     @version: 1.1
     @authors: Dmitriy Nosenko, Sergey Ignatiev    
     @last_updated: 2012-11-16
@@ -18,7 +29,7 @@
 (function ($) {
     var methods = {
         init: function (options) {
-            return this.filter(':input[type="text"],:input[type="password"]').each(function () {
+            return this.filter(':input').each(function () {
                 /* Check if watermark already set */
                 if ($(this).data('watermark-object')) {
                     return;
@@ -27,7 +38,7 @@
                 var settings = $.extend({
                     watermarkClass: 'watermark', /* default watermark class */
                     text: 'watermark', /* default watermark text */
-                    useAttribute: true, /* if true, use specified attribute for watermark text */
+                    useAttribute: false, /* if true, use specified attribute for watermark text */
                     attributeName: 'data-watermark' /* alternative source for watermark text */
                 }, options);
 
@@ -74,8 +85,8 @@
                 /* Creating watermark span */
                 var watermarkObject = $('<span>')
                     .css({
-                        'height': inputHeight,
-                        'line-height': inputHeight + 'px',
+                       // 'height': inputHeight,
+                       // 'line-height': inputHeight + 'px',
                         'font-size': inputFontSize,
                         'top': inputMarginTop,
                         'left': watermarkLeft,
@@ -91,7 +102,9 @@
                 watermarkObject.click(function () {
                     input.click();
                     input.focus();
+                   
                 });
+
 
                 /* Getting they together */
                 input.wrap(wrapper);
