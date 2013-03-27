@@ -2,6 +2,7 @@ jquery-watermark
 ================
 
 jQuery watermark plugin
+Test
 
 Watermark plugin that displays watermark text for inputs.
 It's doesn't use input val. 
